@@ -14,6 +14,8 @@ class Animal:
     def info(self):
         print(f'The name of the {self.specie} is {self.name}, {self.name} is a {self.type} and it weights {self.weight} lb')
         
+zoo = []
+        
 class Lion(Animal):
     def __init__(self, name, type, specie, weight):
         super().__init__(name, type, specie, weight)
@@ -114,45 +116,62 @@ class Tigger(Animal):
     def eat(self):
         print(f'{self.name} is eating meat')
 
-lion = Lion('Gatito', 'Mammal', 'Lion', 600)
-lion.info()
-lion.move()
-lion.eat()
+lion = Lion('Jackson', 'Mammal', 'Lion', 600)
 monkey = Monkey('Lisa', 'Mammal', 'Monkey', 80)
-monkey.info()
-monkey.move()
-monkey.eat()
 iguana = Iguana('Iguanol', 'Reptile', 'Iguana', 6)
-iguana.info()
-iguana.move()
-iguana.eat()
 crocodile = Crocodile('Pancho', 'Reptile', 'Crocodile', 450)
-crocodile.info()
-crocodile.move()
-crocodile.eat()
 zebra = Zebra('Marty', 'Mammal', 'Zebra', 700)
-zebra.info()
-zebra.move()
-zebra.eat()
 giraffe = Giraffe('Melman', 'Mammal', 'Giraffe', 1000)
-giraffe.info()
-giraffe.move()
-giraffe.eat()
 turtle = Turtle('Leonardo', 'Reptile', 'Turtle', 800)
-turtle.info()
-turtle.move()
-turtle.eat()
 hippo = Hippo('Maria', 'Mammal', 'Hippo', 1800)
-hippo.info()
-hippo.move()
-hippo.eat()
 python = Python('Pedro', 'Reptile', 'Snake', 30)
-python.info()
-python.move()
-python.eat()
-tigger = Tigger('Jackson', 'Mammal', 'Tigger', 450)
-tigger.info()
-tigger.move()
-tigger.eat()
+tigger = Tigger('Gatito', 'Mammal', 'Tigger', 450)
 
-print("hello")
+def add_animal(animal):
+    zoo.append(animal)
+    animals_zoo=len(zoo)
+    if(animals_zoo < 10):
+        print(f"{animal.name} the {animal.specie} now is a member of our Zoo family")
+        animal.info()
+        animal.move()
+        animal.eat() 
+
+        
+while len(zoo) < 10:
+    choice = input('Choose a number form 1 to 10 to add an animal to the Zoo: ')
+    choice = int(choice)
+    if choice < 1 or choice > 10:
+        print('Invalid character')
+    else:
+        if(choice == 1):
+            animal = lion
+            add_animal(animal)
+        elif(choice == 2):
+            animal = monkey
+            add_animal(animal)
+        elif(choice == 3):
+            animal = iguana
+            add_animal(animal)
+        elif(choice == 4):
+            animal = crocodile
+            add_animal(animal)
+        elif(choice == 5):
+            animal = giraffe
+            add_animal(animal)
+        elif(choice == 6):
+            animal = zebra
+            add_animal(animal)
+        elif(choice == 7):
+            animal = turtle
+            add_animal(animal)
+        elif(choice == 8):
+            animal = hippo
+            add_animal(animal)
+        elif(choice == 9):
+            animal = python
+            add_animal(animal)
+        elif(choice == 10):
+            animal = tigger
+            add_animal(animal)
+else:
+    print('The Zoo is full')
