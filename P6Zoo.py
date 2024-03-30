@@ -15,6 +15,7 @@ class Animal:
         print(f'The name of the {self.specie} is {self.name}, {self.name} is a {self.type} and it weights {self.weight} lb')
         
 zoo = []
+listchoice =[]
         
 class Lion(Animal):
     def __init__(self, name, type, specie, weight):
@@ -140,38 +141,52 @@ def add_animal(animal):
 while len(zoo) < 10:
     choice = input('Choose a number form 1 to 10 to add an animal to the Zoo: ')
     choice = int(choice)
+    newchoice = choice
+    
     if choice < 1 or choice > 10:
         print('Invalid character')
+    elif newchoice in listchoice:
+        print('This animal is already in the Zoo')
     else:
         if(choice == 1):
             animal = lion
             add_animal(animal)
+            listchoice.append(newchoice)
         elif(choice == 2):
             animal = monkey
-            add_animal(animal)
+            add_animal(animal)  
+            listchoice.append(newchoice)
         elif(choice == 3):
             animal = iguana
-            add_animal(animal)
+            add_animal(animal)            
+            listchoice.append(newchoice)
         elif(choice == 4):
             animal = crocodile
             add_animal(animal)
+            listchoice.append(newchoice)
         elif(choice == 5):
             animal = giraffe
             add_animal(animal)
+            listchoice.append(newchoice)
         elif(choice == 6):
             animal = zebra
             add_animal(animal)
+            listchoice.append(newchoice)
         elif(choice == 7):
             animal = turtle
             add_animal(animal)
+            listchoice.append(newchoice)
         elif(choice == 8):
             animal = hippo
             add_animal(animal)
+            listchoice.append(newchoice)
         elif(choice == 9):
             animal = python
             add_animal(animal)
+            listchoice.append(newchoice)
         elif(choice == 10):
             animal = tigger
             add_animal(animal)
+            listchoice.append(newchoice)
 else:
     print('The Zoo is full')
